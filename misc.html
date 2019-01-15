@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Plants in Nature</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="slick-1.6.0/slick/slick.css" />
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script src="slick-1.6.0/slick/slick.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("nav.sitenav #squash").click(function (e) {
+                $("nav.sitenav ul").toggle({
+                    easing: 'swing'
+                });
+            });
+            $(window).resize(function (e) {
+                var width = $(window).width();
+                if (width < 1000) {
+                    $("nav.sitenav ul").removeAttr('style');
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.autoplay').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1000,
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#purchase_form").validate();
+            $(".autoplay").dblclick(
+            function(){
+                $(".purchase").show();
+            });
+        });
+        
+    </script>
+    
+</head>
+
+<body>
+    <nav class="sitenav">
+        <a href="#" id="squash">Menu</a>
+        <ul>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Places</a>
+                <div class="dropdown-content">
+                    <a href="#">Bristol</a>
+                    <a href="#">Scotland</a>
+                    <a href="#">Cambridge</a>
+                    <a href="#">Bath</a>
+                    <a href="#">Oxford</a>
+                    <a href="#">Wales</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Nature</a>
+                <div class="dropdown-content">
+                    <a href="misc.html">Plants</a>
+                    <a href="#">Animals</a>
+                    <a href="#">Skylines</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Miscellenous</a>
+                <div class="dropdown-content">
+                    <a href="#">Photography</a>
+                </div>
+            </li>
+            <li><a href="#news">About Us/ Contact Us</a></li>
+        </ul>
+    </nav>
+    <br/>
+    <p id="picker">All pictures displayed are property of Anemme Bassey. To select a picture for purchase, double click on preferred picture.</p>
+    <div class="autoplay">
+        <div><img src="images/_MG_0097.jpg" alt=""/></div>
+        <div><img src="images/_MG_0098.jpg" alt=""/></div>
+        <div><img src="images/_MG_0099.jpg" alt=""/></div>
+        <div><img src="images/_MG_0114.jpg" alt=""/></div>
+        <div><img src="images/IMG_0119.jpg" alt=""/></div>
+        <div><img src="images/IMG_0183.jpg" alt=""/></div>
+        <div><img src="images/IMG_0185.jpg" alt=""/></div>
+        <div><img src="images/IMG_0186.jpg" alt=""/></div>
+    </div>
+
+    <div class="purchase">
+        <form action="form.html">
+            <fieldset>
+                <legend>Order Information</legend>
+                <p>
+                    <label for="printsize">Print Size </label>
+                    <select class="required" id="printsize">
+                        <option>11″ x 17″ - Small</option>
+                        <option>18″ x 24″ - Medium</option>
+                        <option>24″ x 36″ - Large</option>
+                    </select>
+                </p>
+                <input type="submit" value="Continue to Checkout">
+            </fieldset>
+        </form>
+    </div>
+ 
+    
+</body>
+
+</html>

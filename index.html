@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Basane Photography</title>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script>
+    $(document).ready(function(){
+        $("nav.sitenav #squash").click(function(e){
+            $("nav.sitenav ul").toggle(
+            {easing: 'swing'});
+        });
+        $( window ).resize(function(e) {
+            var width = $(window).width(); 
+            if (width < 1000) {
+               $("nav.sitenav ul").removeAttr('style');
+            }
+        });
+        
+    });
+
+        
+    </script>
+</head>
+<body>
+<nav  class="sitenav">
+<a href="#" id="squash">Menu</a>
+<ul>
+  <li><a class="active" href="index.html" >Home</a></li>
+  <li class="dropdown">
+    <a href="#" class="dropbtn">Places</a>
+    <div class="dropdown-content">
+      <a href="#">Bristol</a>
+      <a href="#">Scotland</a>
+      <a href="#">Cambridge</a>
+        <a href="#">Bath</a>
+      <a href="#">Oxford</a>
+        <a href="#">Wales</a>
+    </div>
+  </li>
+    <li class="dropdown">
+    <a href="#" class="dropbtn">Nature</a>
+    <div class="dropdown-content">
+      <a href="misc.html">Plants</a>
+      <a href="#">Animals</a>
+      <a href="#">Skylines</a>
+    </div>
+  </li>
+    <li class="dropdown">
+    <a href="#" class="dropbtn">Miscellenous</a>
+    <div class="dropdown-content">
+      <a href="#">Photography</a>
+    </div>
+  </li>
+    <li><a href="#news">About Us/ Contact Us</a></li>
+</ul>
+    </nav>
+<br/>
+  <h1 id="company">Basane Photography</h1> 
+    
+<article id="first" class="test">
+   
+
+    <a href="misc.html"  class="hov"><div class="mid"><h2>NATURE</h2></div></a>
+    <img src="images/IMG_0181.jpg" alt=""/>
+        </article>       
+  
+   <article id="second" class="test">
+      
+       <a href="#" class="hov"><div class="mid"><h2>PLACES</h2></div></a>
+       <img src="images/IMG_0585.jpg" alt=""/>
+        </article>  
+    
+<article id="third" class="test">
+   
+     <a href="#" class="hov"><div class="mid"><h2>MISCELLENOUS</h2></div>
+   </a>
+    <img src="images/IMG_0139.jpg" alt=""/>
+        </article>   
+</body>
+</html>
+

@@ -1,0 +1,206 @@
+nav {
+    z-index:9999;
+    width: 100%;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f06060;
+}
+
+nav.sitenav #squash {
+    display: none;
+}
+
+nav li {
+    float: left;
+    padding-right: 2em;
+    padding-left: 2em;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+}
+
+nav li a,
+.dropbtn {
+    display: inline-block;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.4em;
+}
+
+nav li a:hover,
+.dropdown:hover .dropbtn {
+    background-color: #ff7a7a;
+}
+
+nav li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ff7a7a;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    font-size: 0.8em;
+}
+
+.dropdown-content a {
+    color: #FFFFFF;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ffc6c6
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    z-index:9999;
+}
+
+body {
+    background-color: #f2ebbf;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    clear: both;
+    color: #5C4B51;
+}
+
+
+
+fieldset {
+    border-color: #5C4B51;
+    border-style: solid;
+    border-radius: 10px;
+    background-color: #A6D8CC;
+}
+
+legend {
+    color: #5C4B51;
+    font-size: 1.3em;
+    text-align: justify;
+    border: 2px solid;
+    border-radius: 10px;
+    font-variant: small-caps;
+    background-color: #f2ebbf;
+}
+
+input {
+    border-radius: 8px;
+}
+
+input #submit {
+    background-color: #8CBEB2;
+}
+
+#shipping {
+     display: none;
+}
+
+input.error  { border: thin solid red;
+}
+  label.error {
+      padding-left: 16px;
+      margin-left: .3em;
+      color: red;
+      text-transform: lowercase;
+  }
+
+#message {
+    font-style: italic;
+}
+
+img {
+    width: 360px;
+}
+
+.purchase {
+    display: none;
+}
+
+#company {
+    text-align: center;
+    color: #5C4B51;
+    font-family: 'Gentium Book Basic', serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 4.5em;
+    text-shadow: 5px 5px #A2D7FF;
+    
+}
+
+article.test {
+    float: left;
+    clear: right;
+    padding: 0.2em;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.3);
+    margin-right: 0.8em;
+}
+
+article h2 {
+  font-family: 'Ariel', sans-serif;
+  font-weight: 900;
+  color: white;
+  margin: 2em;
+  position: absolute;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    
+}
+
+#picker {
+    text-align: center;
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+
+
+
+
+
+
+@media (max-width: 1000px) {
+    nav.sitenav {
+        height: auto;
+    }
+    .sitenav ul {
+        display: none;
+    }
+    nav.sitenav li {
+        float: none;
+        display: block;
+        background-color: #f06060;
+    }
+    nav.sitenav ul li a {
+        display: block;
+        text-align: left;
+        background-color: #f06060;
+    }
+    nav.sitenav #squash {
+        display: block;
+        text-align: center;
+        background-color: #BF4040;
+        color: #FFFFFF;
+        font-size: 1.4em;
+        text-decoration: none;
+        padding: 0.5em;
+    }
+    img {
+    width: 159px;
+}
+    article img {
+        width: 300px;
+        
+        
+    }
+}

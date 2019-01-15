@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Order Form</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+      <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>  
+    <script src="date-polyfill.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("nav.sitenav #squash").click(function (e) {
+                $("nav.sitenav ul").toggle({
+                    easing: 'swing'
+                });
+            });
+            $(window).resize(function (e) {
+                var width = $(window).width();
+                if (width < 1000) {
+                    $("nav.sitenav ul").removeAttr('style');
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+     $(document).ready(function(){
+        $("#purchase_form").validate(
+            {
+            errorPlacement: function(error,element) {
+         if ( element.is("[name=shippingchoice]") )
+            error.appendTo( $('input#no_shippingchoice') );
+         else
+            error.insertAfter(element);
+        }
+            });
+
+    });
+    </script>
+    <script type="text/javascript">
+        function displayShipping() {
+            var divico = document.getElementById('shipping');
+            var inputNo = document.getElementById('no_shippingchoice');
+            if (inputNo.checked == true) {
+                divico.style.display = 'block';
+            } else {
+                divico.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="sitenav">
+        <a href="#" id="squash">Menu</a>
+        <ul>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Places</a>
+                <div class="dropdown-content">
+                    <a href="#">Bristol</a>
+                    <a href="#">Scotland</a>
+                    <a href="#">Cambridge</a>
+                    <a href="#">Bath</a>
+                    <a href="#">Oxford</a>
+                    <a href="#">Wales</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Nature</a>
+                <div class="dropdown-content">
+                    <a href="misc.html">Plants</a>
+                    <a href="#">Animals</a>
+                    <a href="#">Skylines</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Miscellenous</a>
+                <div class="dropdown-content">
+                    <a href="#">Photography</a>
+                </div>
+            </li>
+            <li><a href="#news">About Us/ Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <br/>
+    <form method="post" action="http://cscie12.dce.harvard.edu/echo" id="purchase_form" novalidate="novalidate">
+        <fieldset>
+            <legend>
+                Your Information
+            </legend>
+            <p>
+                <label for="first_name">First Name* </label>
+                <input type="text" class="required" name="first_name" id="first_name">
+            </p>
+            <p>
+                <label for="last_name">Last Name* </label>
+                <input type="text" class="required" name="last_name" id="last_name">
+            </p>
+            <p>
+                <label for="email">Email* </label>
+                <input type="email" class="required" name="email" id="email">
+            </p>
+            <p>
+                <label for="phone">Phone Number</label>
+                <input type="tel" class="phone" maxlength="15" name="telephone" id="phone">
+            </p>
+        </fieldset>
+        <br/>
+        <fieldset>
+            <legend>
+                Billing Address
+            </legend>
+            <p>
+                <label for="billing_addressline1">Address 1* </label>
+                <input type="text" class="required" name="billing_addressline1" id="billing_addressline1">
+            </p>
+            <p>
+                <label for="billing_addressline2">Address 2</label>
+                <input type="text" class="addressline2" name="billing_addressline2" id="billing_addressline2">
+            </p>
+            <p>
+                <label for="billing_addressline3">Address 3</label>
+                <input type="text" class="addressline3" name="billing_addresssline3" id="billing_addressline3">
+            </p>
+            <p>
+                <label for="billing_town">City/Town* </label>
+                <input type="text" class="required" name="billing_town" id="billing_town">
+            </p>
+            <p>
+                <label for="billing_zipcode">Zip/Postal Code</label>
+                <input type="text" class="billing_zipcode" maxlength="8" name="billing_zipcode" id="billing_zipcode">
+            </p>
+            <p>
+                <label for="country_billing">Country* </label>
+                <select class="required" name="country_billing" id="country_billing">
+                    <optgroup label="Africa">
+                        <option>Algeria</option>
+                        <option>Angola</option>
+                        <option>Benin</option>
+                        <option>Botswana</option>
+                        <option>Burkina</option>
+                        <option>Burundi</option>
+                        <option>Cameroon</option>
+                        <option>Cape Verde</option>
+                        <option>Central African Republic</option>
+                        <option>Chad</option>
+                        <option>Comoros</option>
+                        <option>Congo</option>
+                        <option>Congo, Democratic Republic of</option>
+                        <option>Djibouti</option>
+                        <option>Eygpt</option>
+                        <option>Equatorial Guinea</option>
+                        <option>Eritea</option>
+                        <option>Ethiopia</option>
+                        <option>Gabon</option>
+                        <option>Gambia</option>
+                        <option>Ghana</option>
+                        <option>Guinea</option>
+                        <option>Guinea-Bissau</option>
+                        <option>Ivory Coast</option>
+                        <option>Kenya</option>
+                        <option>Lesotho</option>
+                        <option>Liberia</option>
+                        <option>Libya</option>
+                        <option>Madagascar</option>
+                        <option>Malawi</option>
+                        <option>Mali</option>
+                        <option>Mauritania</option>
+                        <option>Mauritius</option>
+                        <option>Morocco</option>
+                        <option>Namibia</option>
+                        <option>Niger</option>
+                        <option>Nigeria</option>
+                        <option>Rwanda</option>
+                        <option>Sao Tome and Principe</option>
+                        <option>Senegal</option>
+                        <option>Seychelles</option>
+                        <option>Sierra Leone</option>
+                        <option>Somalia</option>
+                        <option>South Africa</option>
+                        <option>South Sudan</option>
+                        <option>Sudan</option>
+                        <option>Swaziland</option>
+                        <option>Tanzania</option>
+                        <option>Togo</option>
+                        <option>Tunisia</option>
+                        <option>Uganda</option>
+                        <option>Zambia</option>
+                        <option>Zimbabwe</option>
+                    </optgroup>
+                    <optgroup label="Asia">
+                        <option>Afganistan</option>
+                        <option>Bahrain</option>
+                        <option>Bangladesh</option>
+                        <option>Bhutan</option>
+                        <option>Brunei</option>
+                        <option>Burma (Myanmar)</option>
+                        <option>Cambodia</option>
+                        <option>China</option>
+                        <option>East Timor</option>
+                        <option>India</option>
+                        <option>Indonesia</option>
+                        <option>Iran</option>
+                        <option>Iraq</option>
+                        <option>Israel</option>
+                        <option>Japan</option>
+                        <option>Jordan</option>
+                        <option>Kazakhstan</option>
+                        <option>Korea, North</option>
+                        <option>Korea, South</option>
+                        <option>Kuwait</option>
+                        <option>Kyrgyzstan</option>
+                        <option>Laos</option>
+                        <option>Lebanon</option>
+                        <option>Malaysia</option>
+                        <option>Maldives</option>
+                        <option>Mongolia</option>
+                        <option>Nepal</option>
+                        <option>Oman</option>
+                        <option>Pakistan</option>
+                        <option>Philippines</option>
+                        <option>Qatar</option>
+                        <option>Russian Federation</option>
+                        <option>Saudi Arbia</option>
+                        <option>Singapore</option>
+                        <option>Sri Lanka</option>
+                        <option>Syria</option>
+                        <option>Tajikistan</option>
+                        <option>Thailand</option>
+                        <option>Turkey</option>
+                        <option>Turkmenistan</option>
+                        <option>United Arab Emirates</option>
+                        <option>Uzbekistan</option>
+                        <option>Vietam</option>
+                        <option>Yemen</option>
+                    </optgroup>
+                    <optgroup label="Europe">
+                        <option>Albania</option>
+                        <option>Andorra</option>
+                        <option>Armenia</option>
+                        <option>Austria</option>
+                        <option>Azerbaijan</option>
+                        <option>Belarus</option>
+                        <option>Belgium</option>
+                        <option>Bosnia and Herzegovia</option>
+                        <option>Bulgaria</option>
+
+                        <option>Croatia</option>
+                        <option>Cyprus</option>
+                        <option>Czech Republic</option>
+                        <option>Denmark</option>
+                        <option>Estonia</option>
+                        <option>Finland</option>
+                        <option>France</option>
+                        <option>Georgia</option>
+                        <option>Germany</option>
+                        <option>Greece</option>
+                        <option>Hungary</option>
+                        <option>Iceland</option>
+                        <option>Ireland</option>
+                        <option>Italy</option>
+                        <option>Latvia</option>
+                        <option>Liechtenstein</option>
+                        <option>Lithuania</option>
+                        <option>Luxembourg</option>
+                        <option>Macedonia</option>
+                        <option>Malta</option>
+                        <option>Moldova</option>
+                        <option>Montenegro</option>
+                        <option>Netherlands</option>
+                        <option>Norway</option>
+                        <option>Poland</option>
+                        <option>Portugal</option>
+                        <option>Romania</option>
+                        <option>San Marino</option>
+                        <option>Serbia</option>
+                        <option>Slovakia</option>
+                        <option>Slovenia</option>
+                        <option>Spain</option>
+                        <option>Sweden</option>
+                        <option>Switzerland</option>
+                        <option>Ukraine</option>
+                        <option>United Kingdom</option>
+                        <option>Vatican City</option>
+                    </optgroup>
+                    <optgroup label="North America">
+                        <option>Algeria</option>
+                        <option>Antigua and Barbuda</option>
+                        <option>Bahamas</option>
+                        <option>Barbados</option>
+                        <option>Belize</option>
+                        <option>Canada</option>
+                        <option>Costa Rica</option>
+                        <option>Cuba</option>
+                        <option>Dominica</option>
+                        <option>Dominican Republic</option>
+                        <option>El Salvador</option>
+                        <option>Grenada</option>
+                        <option>Guatemala</option>
+                        <option>Haiti</option>
+                        <option>Honduras</option>
+                        <option>Jamaica</option>
+                        <option>Mexico</option>
+                        <option>Nicaragua</option>
+                        <option>Panama</option>
+                        <option>Saint Kitts and the Grenadines</option>
+                        <option>Trinidad and Tobago</option>
+                        <option selected="selected">United States</option>
+                    </optgroup>
+                    <optgroup label="Oceania">
+                        <option>Australia</option>
+                        <option>Fiji</option>
+                        <option>Kiribati</option>
+                        <option>Marshall Islands</option>
+                        <option>Micronesia</option>
+                        <option>Nauru</option>
+                        <option>New Zealand</option>
+                        <option>Palau</option>
+                        <option>Papua New Guinea</option>
+                        <option>Samoa</option>
+                        <option>Solomon Islands</option>
+                        <option>Tonga</option>
+                        <option>Tuvalu</option>
+                        <option>Vanuatu</option>
+                    </optgroup>
+                    <optgroup label="South America">
+                        <option>Argentina</option>
+                        <option>Bolivia</option>
+                        <option>Brazil</option>
+                        <option>Chile</option>
+                        <option>Colombia</option>
+                        <option>Ecuador</option>
+                        <option>Guyana</option>
+                        <option>Paraguay</option>
+                        <option>Peru</option>
+                        <option>Suriname</option>
+                        <option>Uruguay</option>
+                        <option>Venezuela</option>
+                    </optgroup>
+                </select>
+            </p>
+            <p>
+                <span class="required">Is billing address same as shipping address?* </span>
+                <label for="yes_shippingchoice">Yes</label>
+                <input type="radio" value="yes" id="yes_shippingchoice" class="required" name="shippingchoice" onclick="displayShipping()">
+                <label for="no_shippingchoice">No</label>
+                <input type="radio" class="required" value="no" id="no_shippingchoice" name="shippingchoice" onclick="displayShipping()">
+            </p>
+        </fieldset>
+        <br/>
+        <fieldset id="shipping">
+            <legend>
+                Shipping Address
+            </legend>
+            <p>
+                <label for="shipping_addressline1">Address 1* </label>
+                <input type="text" class="required" name="shipping_address1" id="shipping_addressline1">
+            </p>
+            <p>
+                <label for="shipping_addressline2">Address 2</label>
+                <input type="text" class="shipping_address2" name="shipping_address2" id="shipping_addressline2">
+            </p>
+            <p>
+                <label for="shipping_addressline3">Address 3</label>
+                <input type="text" class="shipping_address3" name="shipping_address3" id="shipping_addressline3">
+            </p>
+            <p>
+                <label for="shipping_town">City/Town* </label>
+                <input type="text" class="required" name="shipping_town" id="shipping_town">
+            </p>
+            <p>
+                <label for="shipping_zipcode">Zip/Postal Code</label>
+                <input type="text" class="shipping_zipcode" maxlength="8" name="shipping_zipcode" id="shipping_zipcode">
+            </p>
+            <p>
+                <label for="shipping_country">Country* </label>
+                <select class="required" name="shipping_country" id="shipping_country">
+                    <optgroup label="Africa">
+                        <option>Algeria</option>
+                        <option>Angola</option>
+                        <option>Benin</option>
+                        <option>Botswana</option>
+                        <option>Burkina</option>
+                        <option>Burundi</option>
+                        <option>Cameroon</option>
+                        <option>Cape Verde</option>
+                        <option>Central African Republic</option>
+                        <option>Chad</option>
+                        <option>Comoros</option>
+                        <option>Congo</option>
+                        <option>Congo, Democratic Republic of</option>
+                        <option>Djibouti</option>
+                        <option>Eygpt</option>
+                        <option>Equatorial Guinea</option>
+                        <option>Eritea</option>
+                        <option>Ethiopia</option>
+                        <option>Gabon</option>
+                        <option>Gambia</option>
+                        <option>Ghana</option>
+                        <option>Guinea</option>
+                        <option>Guinea-Bissau</option>
+                        <option>Ivory Coast</option>
+                        <option>Kenya</option>
+                        <option>Lesotho</option>
+                        <option>Liberia</option>
+                        <option>Libya</option>
+                        <option>Madagascar</option>
+                        <option>Malawi</option>
+                        <option>Mali</option>
+                        <option>Mauritania</option>
+                        <option>Mauritius</option>
+                        <option>Morocco</option>
+                        <option>Namibia</option>
+                        <option>Niger</option>
+                        <option>Nigeria</option>
+                        <option>Rwanda</option>
+                        <option>Sao Tome and Principe</option>
+                        <option>Senegal</option>
+                        <option>Seychelles</option>
+                        <option>Sierra Leone</option>
+                        <option>Somalia</option>
+                        <option>South Africa</option>
+                        <option>South Sudan</option>
+                        <option>Sudan</option>
+                        <option>Swaziland</option>
+                        <option>Tanzania</option>
+                        <option>Togo</option>
+                        <option>Tunisia</option>
+                        <option>Uganda</option>
+                        <option>Zambia</option>
+                        <option>Zimbabwe</option>
+                    </optgroup>
+                    <optgroup label="Asia">
+                        <option>Afganistan</option>
+                        <option>Bahrain</option>
+                        <option>Bangladesh</option>
+                        <option>Bhutan</option>
+                        <option>Brunei</option>
+                        <option>Burma (Myanmar)</option>
+                        <option>Cambodia</option>
+                        <option>China</option>
+                        <option>East Timor</option>
+                        <option>India</option>
+                        <option>Indonesia</option>
+                        <option>Iran</option>
+                        <option>Iraq</option>
+                        <option>Israel</option>
+                        <option>Japan</option>
+                        <option>Jordan</option>
+                        <option>Kazakhstan</option>
+                        <option>Korea, North</option>
+                        <option>Korea, South</option>
+                        <option>Kuwait</option>
+                        <option>Kyrgyzstan</option>
+                        <option>Laos</option>
+                        <option>Lebanon</option>
+                        <option>Malaysia</option>
+                        <option>Maldives</option>
+                        <option>Mongolia</option>
+                        <option>Nepal</option>
+                        <option>Oman</option>
+                        <option>Pakistan</option>
+                        <option>Philippines</option>
+                        <option>Qatar</option>
+                        <option>Russian Federation</option>
+                        <option>Saudi Arbia</option>
+                        <option>Singapore</option>
+                        <option>Sri Lanka</option>
+                        <option>Syria</option>
+                        <option>Tajikistan</option>
+                        <option>Thailand</option>
+                        <option>Turkey</option>
+                        <option>Turkmenistan</option>
+                        <option>United Arab Emirates</option>
+                        <option>Uzbekistan</option>
+                        <option>Vietam</option>
+                        <option>Yemen</option>
+                    </optgroup>
+                    <optgroup label="Europe">
+                        <option>Albania</option>
+                        <option>Andorra</option>
+                        <option>Armenia</option>
+                        <option>Austria</option>
+                        <option>Azerbaijan</option>
+                        <option>Belarus</option>
+                        <option>Belgium</option>
+                        <option>Bosnia and Herzegovia</option>
+                        <option>Bulgaria</option>
+
+                        <option>Croatia</option>
+                        <option>Cyprus</option>
+                        <option>Czech Republic</option>
+                        <option>Denmark</option>
+                        <option>Estonia</option>
+                        <option>Finland</option>
+                        <option>France</option>
+                        <option>Georgia</option>
+                        <option>Germany</option>
+                        <option>Greece</option>
+                        <option>Hungary</option>
+                        <option>Iceland</option>
+                        <option>Ireland</option>
+                        <option>Italy</option>
+                        <option>Latvia</option>
+                        <option>Liechtenstein</option>
+                        <option>Lithuania</option>
+                        <option>Luxembourg</option>
+                        <option>Macedonia</option>
+                        <option>Malta</option>
+                        <option>Moldova</option>
+                        <option>Montenegro</option>
+                        <option>Netherlands</option>
+                        <option>Norway</option>
+                        <option>Poland</option>
+                        <option>Portugal</option>
+                        <option>Romania</option>
+                        <option>San Marino</option>
+                        <option>Serbia</option>
+                        <option>Slovakia</option>
+                        <option>Slovenia</option>
+                        <option>Spain</option>
+                        <option>Sweden</option>
+                        <option>Switzerland</option>
+                        <option>Ukraine</option>
+                        <option>United Kingdom</option>
+                        <option>Vatican City</option>
+                    </optgroup>
+                    <optgroup label="North America">
+                        <option>Algeria</option>
+                        <option>Antigua and Barbuda</option>
+                        <option>Bahamas</option>
+                        <option>Barbados</option>
+                        <option>Belize</option>
+                        <option>Canada</option>
+                        <option>Costa Rica</option>
+                        <option>Cuba</option>
+                        <option>Dominica</option>
+                        <option>Dominican Republic</option>
+                        <option>El Salvador</option>
+                        <option>Grenada</option>
+                        <option>Guatemala</option>
+                        <option>Haiti</option>
+                        <option>Honduras</option>
+                        <option>Jamaica</option>
+                        <option>Mexico</option>
+                        <option>Nicaragua</option>
+                        <option>Panama</option>
+                        <option>Saint Kitts and the Grenadines</option>
+                        <option>Trinidad and Tobago</option>
+                        <option selected="selected">United States</option>
+                    </optgroup>
+                    <optgroup label="Oceania">
+                        <option>Australia</option>
+                        <option>Fiji</option>
+                        <option>Kiribati</option>
+                        <option>Marshall Islands</option>
+                        <option>Micronesia</option>
+                        <option>Nauru</option>
+                        <option>New Zealand</option>
+                        <option>Palau</option>
+                        <option>Papua New Guinea</option>
+                        <option>Samoa</option>
+                        <option>Solomon Islands</option>
+                        <option>Tonga</option>
+                        <option>Tuvalu</option>
+                        <option>Vanuatu</option>
+                    </optgroup>
+                    <optgroup label="Sout America">
+                        <option>Argentina</option>
+                        <option>Bolivia</option>
+                        <option>Brazil</option>
+                        <option>Chile</option>
+                        <option>Colombia</option>
+                        <option>Ecuador</option>
+                        <option>Guyana</option>
+                        <option>Paraguay</option>
+                        <option>Peru</option>
+                        <option>Suriname</option>
+                        <option>Uruguay</option>
+                        <option>Venezuela</option>
+                    </optgroup>
+                </select>
+            </p>
+
+        </fieldset>
+        <br/>
+        <fieldset>
+            <legend>
+                Payment Method
+            </legend>
+            <p>
+                <label for="cardtype">Card Type* </label>
+                <select class="required" name="cardtype" id="cardtype">
+                    <option>Visa</option>
+                    <option>Visa Electron</option>
+                    <option selected="selected">Mastercard</option>
+                    <option>Maestro</option>
+                    <option>Discover</option>
+                </select>
+            </p>
+            <p>
+                <label for="cardnumber">Card Number* </label>
+                <input type="text" class="required" maxlength="16" name="cardnumber" id="cardnumber">
+            </p>
+            <p>
+                <label for="cardexpire">Expiry Date* </label>
+                 <input type="date" class="required" name="expiry_date" id="cardexpire">
+            </p>
+            <p>
+                <label for="cvv">CVV* </label>
+                 <input type="password" class="required" maxlength="3" name="cvv" id="cvv">
+            </p>
+        </fieldset>
+        <br/>
+        <p><span id="message">Required fields are marked with *</span></p>
+        <input type="submit" value="Complete Transaction" id="sumbit">
+    </form>
+
+</body>
+
+</html>
